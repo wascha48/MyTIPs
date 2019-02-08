@@ -1,0 +1,18 @@
+<!-- Autofield for the form.
+Creates a field by pressing the Enter key. -->
+
+<div id="dynamic"><input id="scancode100" type="text" name="scancode[]" value=""/></div>
+
+<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $i=101;
+        $("#dynamic").keyup(function(e) {
+            if (e.which == 13) {
+                $("#dynamic").append('<input id="scancode'+$i+'" type="text" name="scancode[]" value=""/>');
+                $("#scancode"+$i).focus().select();
+		$i=$i+1;
+            };
+        });
+    }) ;
+</script>
